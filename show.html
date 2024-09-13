@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4CAF50;
+            font-size: 36px;
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+        h3 {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        .result {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .positive {
+            color: #4CAF50;
+        }
+        .negative {
+            color: #F44336;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Diabetes Prediction Result</h1>
+    <div class="prediction">
+        <h3>Pregnancy Value: {{ preg }}</h3>
+        <h3>Blood Pressure Value: {{ bp }}</h3>
+        <h3>Glucose Levels: {{ gluc }}</h3>
+        <h3>Skin Thickness: {{ st }}</h3>
+        <h3>Insulin Levels: {{ ins }}</h3>
+        <h3>BMI: {{ bmi }}</h3>
+        <h3>Diabetes Pedigree Function: {{ dbf }}</h3>
+        <h3>Age: {{ age }}</h3>
+        <div class="result {% if res == 'You Are Not Diabetic' %} positive{% else %}negative{% endif %}">
+            {{ res }}
+        </div>
+    </div>
+</div>
+</body>
+</html>
